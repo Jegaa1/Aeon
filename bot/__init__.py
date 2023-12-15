@@ -239,7 +239,7 @@ SHOW_MEDIAINFO = SHOW_MEDIAINFO.lower() == 'true'
 MEDIA_GROUP = environ.get('MEDIA_GROUP', '')
 MEDIA_GROUP = MEDIA_GROUP.lower() == 'true'
 
-BASE_URL = environ.get('BASE_URL', '').rstrip("/")
+BASE_URL = environ.get('BASE_URL', 'https://scienceexperiment-1c04846fc9b8.herokuapp.com').rstrip("/")
 if len(BASE_URL) == 0:
     log_warning('BASE_URL not provided!')
     BASE_URL = ''
