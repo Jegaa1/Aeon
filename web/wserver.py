@@ -8,7 +8,7 @@ from web.nodes import make_tree
 
 app = Flask(__name__)
 
-aria2 = ariaAPI(ariaClient(host="http://localhost", port=6800, secret=""))
+aria2 = ariaAPI(ariaClient(host="http://localhost", port=3000, secret=""))
 
 basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
             handlers=[FileHandler('log.txt'), StreamHandler()],
