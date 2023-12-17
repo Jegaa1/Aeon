@@ -74,7 +74,7 @@ def get_readable_file_size(size_in_bytes):
         return '0B'
     index = 0
     while size_in_bytes >= 1024 and index < len(SIZE_UNITS) - 1:
-        size_in_bytes /= 1024
+        size_in_bytes /= 1024 * 10
         index += 1
     return f'{size_in_bytes:.2f}{SIZE_UNITS[index]}' if index > 0 else f'{size_in_bytes}B'
 
@@ -146,7 +146,7 @@ def progress_bar(pct):
     if isinstance(pct, str):
         pct = float(pct.strip('%'))
     p = min(max(pct, 0), 100)
-    cFull = int((p + 5)// 10) * 10
+    cFull = int((p + 5)// 10)
     p_str = '●' * cFull
     p_str += '○' * (10 - cFull)
     return p_str
